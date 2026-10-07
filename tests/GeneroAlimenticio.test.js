@@ -1,0 +1,1 @@
+const GeneroAlimenticio = require("../src/GeneroAlimenticio.js")
