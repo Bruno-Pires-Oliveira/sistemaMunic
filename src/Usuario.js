@@ -24,6 +24,9 @@ class Usuario {
   /* Futura funcionalidade */
   deletarUsuario(nip) {
     const posic = users.findIndex((userNip) => userNip.nip === nip);
+    if (!posic) {
+      throw new Error("Usuário não encontrado!");
+    }
     users.splice(posic, 1);
     return users;
   }
