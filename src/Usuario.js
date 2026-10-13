@@ -23,7 +23,7 @@ class Usuario {
   }
   /* Futura funcionalidade */
   deletarUsuario(nip) {
-    const posic = users.findIndex((userNip) => userNip.nip === nip);
+    const posic = users.find((userNip) => userNip.nip === nip);
     if (!posic) {
       throw new Error("Usuário não encontrado!");
     }
@@ -31,5 +31,12 @@ class Usuario {
     return users;
   }
 }
+
+
+
+
+
+
+
 
 module.exports = Usuario;

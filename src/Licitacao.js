@@ -1,12 +1,11 @@
 let licitacao = [];
 
 class Licitacao {
-  constructor(numeroAta, fornecedor, valorAta, dataVigencia, generosAli = []) {
+  constructor(numeroAta, fornecedor, valorAta, dataVigencia) {
     this.numeroAta = numeroAta;
     this.fornecedor = fornecedor;
     this.valorAta = valorAta;
     this.dataVigencia = dataVigencia;
-    this.generosAli = generosAli;
   }
   cadastroLicitacao( numeroAta, fornecedor, valorAta, dataVigencia ) {
     licitacao.push({ numeroAta, fornecedor, valorAta, dataVigencia});
@@ -15,8 +14,15 @@ class Licitacao {
   buscarLicitacaoPorNum(numeroAta) {
     return ` ${licitacao.find((numAta) => numAta.numeroAta === numeroAta)}`;
   }
-  atualizarLicitacao(){
+  atualizarLicitacao(numeroAta,fornecedor, valorAta, dataVigencia){
+    let atuali = licitacao.find((numAta) => numAta.numeroAta === numeroAta)
+    if(atuali){
+      atuali.fornecedor = fornecedor
+      atuali.valorAta = valorAta
+      atuali.dataVigencia = dataVigencia
 
+      return licitacao
+    }
   }
 }
 
